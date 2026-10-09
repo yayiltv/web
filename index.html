@@ -1,231 +1,201 @@
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.8;
-        overflow-x: hidden;
-    }
-
-    /* Hero Banner */
-    .hero-banner {
-        width: 100%;
-        background-color: var(--bg-color);
-        text-align: center;
-        padding: 0;
-        margin: 0;
-    }
-
-    .hero-banner img {
-        width: 100%;
-        max-height: 450px;
-        object-fit: cover;
-        display: block;
-        margin: 0 auto;
-        border-bottom: 3px solid var(--gold-color);
-    }
-
-    /* Container */
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 80px 20px;
-    }
-
-    /* Section Styles */
-    section {
-        padding: 60px 0;
-        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-    }
-
-    h2 {
-        color: var(--gold-color);
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-    }
-
-    p {
-        font-size: 1.1rem;
-        color: var(--text-color);
-        margin-bottom: 20px;
-    }
-
-    /* Grid Layouts */
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-        align-items: center;
-    }
-
-    .img-container img {
-        width: 100%;
-        border-radius: 12px;
-        border: 2px solid var(--border-color);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        transition: transform 0.3s ease;
-    }
-
-    .img-container img:hover {
-        transform: scale(1.02);
-    }
-
-    /* Masal Kitapları Şeridi */
-    .masal-grid {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 15px;
-        margin-top: 40px;
-    }
-
-    .masal-item img {
-        width: 100%;
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .masal-item img:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-    }
-
-    /* İletişim / Sosyal */
-    .social-section {
-        text-align: center;
-        padding: 60px 0;
-    }
-
-    .social-section img {
-        max-width: 300px;
-        width: 100%;
-        border-radius: 10px;
-        border: 2px solid var(--border-color);
-        margin-top: 20px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 900px) {
-        .grid-2 {
-            grid-template-columns: 1fr;
-            gap: 30px;
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yağmur Yılmaz Kayacı - Kişisel Portföy</title>
+    <style>
+        :root {
+            --bg-color: #0b1329;
+            --gold-color: #d4af37;
+            --text-color: #e2e8f0;
+            --border-color: rgba(212, 175, 55, 0.2);
         }
-        
-        .masal-grid {
-            grid-template-columns: repeat(3, 1fr);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        .hero-banner {
+            width: 100%;
+            background-color: var(--bg-color);
+            text-align: center;
+        }
+        .hero-banner img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-bottom: 3px solid var(--gold-color);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
         h2 {
-            font-size: 2rem;
+            color: var(--gold-color);
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
-    }
-
-    @media (max-width: 600px) {
+        p {
+            font-size: 1.05rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .img-container img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+            background: rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
         .masal-grid {
-            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-top: 30px;
         }
-    }
-</style>
+        .masal-item img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .masal-item img:hover {
+            transform: translateY(-5px);
+        }
+        .social-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .social-section img {
+            max-width: 220px;
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--border-color);
+        }
+        @media (max-width: 900px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 25px; }
+            .masal-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .masal-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
 
+    <div class="hero-banner">
+        <img src="banner.jpg" alt="Yağmur Yılmaz Banner">
+    </div>
 
-<!-- 1. KISIM - HERO BANNER -->
-<div class="hero-banner">
-    <img src="banner.jpg" alt="Yağmur Yılmaz Kayacı Banner">
-</div>
-
-<div class="container">
-
-    <!-- 2. KISIM - HAKKIMDA -->
-    <section id="hakkimda">
-        <div class="grid-2">
-            <div class="img-container">
-                <img src="yagmur.png" alt="Yağmur Yılmaz Kayacı Portre">
+    <div class="container">
+        <!-- 2. KISIM - HAKKIMDA -->
+        <section id="hakkimda">
+            <div class="grid-2">
+                <div class="img-container">
+                    <img src="yagmur.png" alt="Yağmur Yılmaz">
+                </div>
+                <div>
+                    <h2>Hakkımda</h2>
+                    <p>Merhaba, ben Yağmur Yılmaz Kayacı. Bilginin ve toplumsal bilincin paylaşıldıkça çoğaldığına inanan; Türk kültürü, tarihi ve dili üzerine araştırmalar yapan bağımsız bir araştırmacı, yazar ve eğitmenim.</p>
+                    <p>RTV Programcılığı, Kamu Yönetimi lisans eğitimi ile İş Sağlığı ve Güvenliği alanındaki mezuniyetlerimi, yıllardır Türk İşaret Dili (TİD) dalında yürüttüğüm akademik ve pratik çalışmalarla birleştiriyorum. Aynı zamanda eğitimli bir afet gönüllüsü olarak toplumsal sorumluluk projelerinde aktif rol alıyor; dezavantajlı grupların hayatında farkındalık yaratmayı ve iletişimin engellerini aşmayı amaçlıyorum.</p>
+                    <p>Geliştirdiğim dijital projeler, kaleme aldığım eserler ve yürüttüğüm eğitimlerle kültürel mirasımızı ve toplumsal dayanışmayı geleceğe taşımaya devam ediyorum.</p>
+                </div>
             </div>
-            <div>
-                <h2>Hakkımda</h2>
-                <p>Merhaba, ben Yağmur Yılmaz Kayacı. Bilginin ve toplumsal bilincin paylaşıldıkça çoğaldığına inanan; Türk kültürü, tarihi ve dili üzerine araştırmalar yapan bağımsız bir araştırmacı, yazar ve eğitmenim.</p>
-                <p>RTV Programcılığı, Kamu Yönetimi lisans eğitimi ile İş Sağlığı ve Güvenliği alanındaki mezuniyetlerimi, yıllardır Türk İşaret Dili (TİD) dalında yürüttüğüm akademik ve pratik çalışmalarla birleştiriyorum.</p>
-                <p>Aynı zamanda eğitimli bir afet gönüllüsü olarak toplumsal sorumluluk projelerinde aktif rol alıyor; dezavantajlı grupların hayatında farkındalık yaratmayı ve iletişimin engellerini aşmayı amaçlıyorum. Geliştirdiğim dijital projeler, kaleme aldığım eserler ve yürüttüğüm eğitimlerle kültürel mirasımızı ve toplumsal dayanışmayı geleceğe taşımaya devam ediyorum.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 3. KISIM - KİTAPLARIM -->
-    <section id="kitaplarim">
-        <div class="grid-2">
-            <div>
-                <h2>Kitaplarım</h2>
-                <p>Dil, konuşulmadan önce vardı. Bu kitap, o sessiz çağın izini sürüyor.</p>
-                <p>Dil gerçekten sesle mi başladı, yoksa insanlık kelimelerden önce işaretlerle mi anlaştı? İlk dil işaret dili miydi?</p>
-                <p>Türk İşaret Dili’ni merkezine alan bu çalışma, dili yalnızca bir iletişim aracı olarak değil; nesiller boyunca aktarılan bir hafıza, bir kimlik ve bir kültür alanı olarak ele alıyor. Okuyucusunu, dil üzerine yeniden düşünmeye; kendi diline ve kültürüne sahip çıkmaya davet ediyor.</p>
-                <p>“Her Türk’ün Bilmesi Gerekenler” başlıklı çok ciltli serinin ilk kitabı olan <strong>Türklerin İşaret Tarihi</strong>, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor.</p>
-                <p>Belki de insanlığın ilk dili, sandığımızdan çok daha sessizdi...</p>
+        <!-- 3. KISIM - KİTAPLARIM -->
+        <section id="kitaplarim">
+            <div class="grid-2">
+                <div>
+                    <h2>Kitaplarım</h2>
+                    <p>Dil, konuşulmadan önce vardı. Bu kitap, o sessiz çağın izini sürüyor. Dil gerçekten sesle mi başladı, yoksa insanlık kelimelerden önce işaretlerle mi anlaştı? İlk dil işaret dili miydi?</p>
+                    <p>Türk İşaret Dili’ni merkezine alan bu çalışma, dili yalnızca bir iletişim aracı olarak değil; nesiller boyunca aktarılan bir hafıza, bir kimlik ve bir kültür alanı olarak ele alıyor. Okuyucusunu, dil üzerine yeniden düşünmeye; kendi diline ve kültürüne sahip çıkmaya davet ediyor.</p>
+                    <p>'Her Türk’ün Bilmesi Gerekenler' başlıklı çok ciltli serinin ilk kitabı olan Türklerin İşaret Tarihi, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor. Belki de insanlığın ilk dili, sandığımızdan çok daha sessizdi...</p>
+                </div>
+                <div class="img-container">
+                    <img src="kapak.jpg" alt="Kitap Kapağı">
+                </div>
             </div>
-            <div class="img-container" style="text-align: right;">
-                <img src="kapak.jpg" alt="Türklerin İşaret Tarihi Kitap Kapağı" style="max-width: 350px;">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 4. KISIM - EĞİTİMLERİM -->
-    <section id="egitimlerim">
-        <div class="grid-2">
-            <div class="img-container" style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <img src="udemy_1.png" alt="Udemy Eğitim 1" style="flex: 1; min-width: 200px;">
-                <img src="udemy_2.png" alt="Udemy Eğitim 2" style="flex: 1; min-width: 200px;">
+        <!-- 4. KISIM - EĞİTİMLERİM -->
+        <section id="egitimlerim">
+            <div class="grid-2">
+                <div class="img-container" style="display: flex; gap: 10px;">
+                    <img src="udemy_1.png" alt="Eğitim 1" style="flex:1;">
+                    <img src="udemy_2.png" alt="Eğitim 2" style="flex:1;" onerror="this.style.display='none'">
+                </div>
+                <div>
+                    <h2>Eğitimlerim</h2>
+                    <p>MEB onaylı TİD Tercümanı ve Eğitmeni kimliğimle profesyonel eğitim serileri veriyorum.</p>
+                    <p>Temel seviyenin 120 saate, ileri seviyenin 200 saate denk geldiği; ayrıntılı ve profesyonel bir şekilde çekilmiş Türk İşaret Dili eğitimlerim bu alanda yetkinlik kazanmak isteyenler için Udemy platformunda yayındadır.</p>
+                </div>
             </div>
-            <div>
-                <h2>Eğitimlerim</h2>
-                <p>MEB onaylı TİD Tercümanı ve Eğitmeni kimliğimle profesyonel eğitim serileri veriyorum.</p>
-                <p>Temel seviyenin 120 saate, ileri seviyenin 200 saate denk geldiği; ayrıntılı ve profesyonel bir şekilde çekilmiş Türk İşaret Dili eğitimlerim bu alanda yetkinlik kazanmak isteyenler için Udemy platformunda yayındadır.</p>
+        </section>
+
+        <!-- 5. KISIM - UYGULAMALARIM -->
+        <section id="uygulamalarim">
+            <div class="grid-2">
+                <div>
+                    <h2>Uygulamalarım</h2>
+                    <p><strong>TİD Sözlük:</strong> Ücretsiz yayınladığım bu mobil sözlük uygulaması ile kullanıcılar işaret dili kelimelerine doğrudan erişebilir ve hemen kelime öğrenebilirler.</p>
+                    <p><strong>Cep Kasa: Altın & Varlık Takip:</strong> Güvenli bir varlık ve altın listesi saklama aracıdır.</p>
+                </div>
+                <div style="display: flex; gap: 15px; justify-content: center;">
+                    <img src="logo.png" alt="TİD Sözlük" style="max-width: 140px; border-radius: 10px; border: 2px solid var(--border-color);">
+                    <img src="cepkasa.jpg" alt="Cep Kasa" style="max-width: 140px; border-radius: 10px; border: 2px solid var(--border-color);">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 5. KISIM - UYGULAMALARIM -->
-    <section id="uygulamalarim">
-        <div class="grid-2">
-            <div>
-                <h2>Uygulamalarım</h2>
-                <p><strong>TİD Sözlük:</strong> Ücretsiz yayınladığım bu mobil sözlük uygulaması ile kullanıcılar işaret dili kelimelerine doğrudan erişebilir ve hemen kelime öğrenebilirler.</p>
-                <p><strong>Cep Kasa: Altın & Varlık Takip:</strong> Güvenli bir varlık ve altın listesi saklama aracıdır.</p>
+        <!-- 6. KISIM - MASAL KİTAPLARIM -->
+        <section id="masal-kitaplarim">
+            <h2>Masal Kitaplarım</h2>
+            <p>Engellilik ve sosyal farkındalık temalı, akran zorbalığını da işleyen, 'Farkındayım Serisi' isminde Google Play Store üzerinden edinilebilen 6 adet çocuk masal kitabım bulunmaktadır.</p>
+            <div class="masal-grid">
+                <div class="masal-item"><img src="masal_1.png" alt="Masal 1"></div>
+                <div class="masal-item"><img src="masal_2.png" alt="Masal 2"></div>
+                <div class="masal-item"><img src="masal_3.png" alt="Masal 3"></div>
+                <div class="masal-item"><img src="masal_4.png" alt="Masal 4"></div>
+                <div class="masal-item"><img src="masal_5.png" alt="Masal 5"></div>
+                <div class="masal-item"><img src="masal_6.png" alt="Masal 6"></div>
             </div>
-            <div class="img-container" style="display: flex; gap: 20px; justify-content: flex-end; align-items: center;">
-                <img src="logo.png" alt="TİD Sözlük Logo" style="max-width: 150px; border-radius: 20px;">
-                <img src="cepkasa.jpg" alt="Cep Kasa Görseli" style="max-width: 150px; border-radius: 20px;">
+        </section>
+
+        <!-- 7. KISIM - İLETİŞİM -->
+        <section class="social-section">
+            <h2>İletişim</h2>
+            <p>Sosyal medya hesaplarımız üzerinden bağlantı kurabilirsiniz.</p>
+            <div style="margin-top: 20px;">
+                <img src="sosyal.png" alt="Sosyal Medya QR">
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <!-- 6. KISIM - MASAL KİTAPLARIM -->
-    <section id="masal-kitaplarim">
-        <h2>Masal Kitaplarım</h2>
-        <p>Engellilik ve sosyal farkındalık temalı, akran zorbalığını da işleyen, <strong>'Farkındayım Serisi'</strong> isminde Google Play Store üzerinden edinilebilen 6 adet çocuk masal kitabım bulunmaktadır.</p>
-        
-        <div class="masal-grid">
-            <div class="masal-item"><img src="masal_1.png" alt="Masal 1"></div>
-            <div class="masal-item"><img src="masal_2.png" alt="Masal 2"></div>
-            <div class="masal-item"><img src="masal_3.png" alt="Masal 3"></div>
-            <div class="masal-item"><img src="masal_4.png" alt="Masal 4"></div>
-            <div class="masal-item"><img src="masal_5.png" alt="Masal 5"></div>
-            <div class="masal-item"><img src="masal_6.png" alt="Masal 6"></div>
-        </div>
-    </section>
-
-    <!-- 7. KISIM - İLETİŞİM -->
-    <section class="social-section" id="iletisim">
-        <h2>İletişim</h2>
-        <p>Benimle bağlantı kurmak ve sosyal medya kanallarımı takip etmek için aşağıdaki alanı inceleyebilirsiniz.</p>
-        <div style="display: flex; justify-content: center;">
-            <img src="sosyal.png" alt="Sosyal Medya İletişim">
-        </div>
-    </section>
-
-</div>
+</body>
+</html>
