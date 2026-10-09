@@ -3,859 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Yağmur Yılmaz Kayacı | Kişisel Portföy</title>
-
+    <title>Yağmur Yılmaz Kayacı - Kişisel Portföy</title>
     <style>
-        /* =========================================================
-           TEMEL AYARLAR
-        ========================================================= */
-
         :root {
-            --lacivert: #0b1329;
-            --lacivert-acik: #101a35;
-            --gold: #d8b45a;
-            --gold-acik: #e5c978;
-            --metin: #e7e9ef;
-            --metin-soft: #c5cad6;
-            --cizgi: rgba(216, 180, 90, 0.25);
+            --bg-color: #0b1329;
+            --gold-color: #d4af37;
+            --text-color: #e2e8f0;
+            --border-color: rgba(212, 175, 55, 0.3);
         }
-
+        html {
+            scroll-behavior: smooth;
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            background: var(--lacivert);
-            color: var(--metin);
-            font-family: "Georgia", "Times New Roman", serif;
-            line-height: 1.8;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             overflow-x: hidden;
         }
-
-        img {
-            display: block;
-            max-width: 100%;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* =========================================================
-           GENEL BÖLÜM AYARLARI
-        ========================================================= */
-
-        section {
+        .hero-banner {
             width: 100%;
-            position: relative;
+            background-color: var(--bg-color);
+            text-align: center;
         }
-
-        .container {
-            width: min(1200px, 90%);
-            margin: 0 auto;
-        }
-
-        .section-title {
-            color: var(--gold);
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            line-height: 1.2;
-            margin-bottom: 28px;
-        }
-
-        .section-text {
-            color: var(--metin-soft);
-            font-size: clamp(1rem, 1.35vw, 1.18rem);
-            line-height: 1.95;
-            font-weight: 400;
-        }
-
-        .gold-line {
-            width: 70px;
-            height: 1px;
-            background: var(--gold);
-            margin: 0 0 28px;
-            opacity: 0.8;
-        }
-
-
-        /* =========================================================
-           1 - HERO BANNER
-        ========================================================= */
-
-        .hero {
+        .hero-banner img {
             width: 100%;
-            min-height: auto;
-            background: var(--lacivert);
-        }
-
-        .hero img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
-            object-position: center;
-        }
-
-
-        /* =========================================================
-           2 - HAKKIMDA
-        ========================================================= */
-
-        .about {
-            padding: 130px 0;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: minmax(280px, 0.8fr) minmax(400px, 1.2fr);
-            gap: 90px;
-            align-items: center;
-        }
-
-        .about-image {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-        .about-image img {
-            width: min(100%, 430px);
-            margin: 0 auto;
-        }
-
-        .about-content {
-            padding-right: 20px;
-        }
-
-
-        /* =========================================================
-           3 - KİTAPLARIM
-        ========================================================= */
-
-        .books {
-            padding: 130px 0;
-            background:
-                linear-gradient(
-                    180deg,
-                    var(--lacivert) 0%,
-                    var(--lacivert-acik) 50%,
-                    var(--lacivert) 100%
-                );
-        }
-
-        .books-grid {
-            display: grid;
-            grid-template-columns: minmax(400px, 1.2fr) minmax(260px, 0.8fr);
-            gap: 90px;
-            align-items: center;
-        }
-
-        .books-content {
-            order: 1;
-        }
-
-        .book-image {
-            order: 2;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        .book-image img {
-            width: min(100%, 400px);
-            max-height: 620px;
-            object-fit: contain;
-            margin-left: auto;
-        }
-
-
-        /* =========================================================
-           4 - EĞİTİMLERİM
-        ========================================================= */
-
-        .education {
-            padding: 130px 0;
-        }
-
-        .education-grid {
-            display: grid;
-            grid-template-columns: minmax(350px, 1fr) minmax(400px, 1fr);
-            gap: 90px;
-            align-items: center;
-        }
-
-        .education-images {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-
-        .education-images img {
-            width: min(100%, 260px);
             max-height: 420px;
-            object-fit: contain;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            border-bottom: 2px solid var(--gold-color);
         }
-
-        .education-content {
-            padding-left: 20px;
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-
-
-        /* =========================================================
-           5 - UYGULAMALARIM
-        ========================================================= */
-
-        .apps {
-            padding: 130px 0;
-            background:
-                linear-gradient(
-                    180deg,
-                    var(--lacivert) 0%,
-                    var(--lacivert-acik) 50%,
-                    var(--lacivert) 100%
-                );
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
-
-        .apps-header {
-            text-align: center;
-            max-width: 850px;
-            margin: 0 auto 80px;
+        h2 {
+            color: var(--gold-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
-
-        .apps-header .gold-line {
-            margin: 0 auto 28px;
+        p {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 12px;
         }
-
-        .apps-list {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(300px, 1fr));
-            gap: 80px;
-        }
-
-        .app-card {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 40px;
-            align-items: center;
-            padding: 35px;
-            border: 1px solid var(--cizgi);
-            background: rgba(255, 255, 255, 0.015);
-            transition: transform 0.35s ease, border-color 0.35s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(216, 180, 90, 0.55);
-        }
-
-        .app-image {
+        .row {
             display: flex;
-            justify-content: center;
             align-items: center;
+            gap: 40px;
         }
-
-        .app-image img {
-            width: 160px;
-            height: 160px;
+        .row.reverse {
+            flex-direction: row-reverse;
+        }
+        .col-text {
+            flex: 1.2;
+        }
+        .col-img {
+            flex: 0.8;
+            text-align: center;
+        }
+        /* Küçük ve şık görsel boyutlandırmaları */
+        .col-img img {
+            max-width: 100%;
+            max-height: 240px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            background: rgba(0,0,0,0.2);
             object-fit: contain;
         }
-
-        .app-title {
-            color: var(--gold);
-            font-size: 1.55rem;
-            font-weight: 500;
-            margin-bottom: 15px;
+        .udemy-box, .apps-box {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
         }
-
-        .app-text {
-            color: var(--metin-soft);
-            font-size: 1rem;
-            line-height: 1.8;
+        .udemy-box img, .apps-box img {
+            max-height: 150px;
+            max-width: 48%;
+            border-radius: 8px;
         }
-
-
-        /* =========================================================
-           6 - MASAL KİTAPLARIM
-        ========================================================= */
-
-        .fairy-tales {
-            padding: 130px 0 100px;
+        .apps-box img {
+            max-height: 120px;
+            max-width: 120px;
         }
-
-        .fairy-header {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 65px;
-        }
-
-        .fairy-header .gold-line {
-            margin: 0 auto 28px;
-        }
-
-        .fairy-books {
-            width: 100%;
+        .masal-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 22px;
-            align-items: end;
+            gap: 10px;
+            margin-top: 25px;
         }
-
-        .fairy-books img {
+        .masal-item img {
             width: 100%;
-            height: auto;
-            object-fit: contain;
-            transition: transform 0.35s ease;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease;
         }
-
-        .fairy-books img:hover {
-            transform: translateY(-10px);
+        .masal-item img:hover {
+            transform: translateY(-4px);
         }
-
-
-        /* =========================================================
-           7 - İLETİŞİM
-        ========================================================= */
-
-        .contact {
-            padding: 110px 0 70px;
-            border-top: 1px solid var(--cizgi);
+        .social-section {
             text-align: center;
+            padding: 50px 0;
         }
-
-        .contact-image {
-            width: min(100%, 800px);
-            margin: 0 auto;
-        }
-
-        .contact-image img {
+        .social-section img {
+            max-width: 160px;
             width: 100%;
-            height: auto;
-            margin: 0 auto;
-            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 15px;
         }
-
-        .footer {
-            padding: 35px 20px;
-            text-align: center;
-            color: rgba(197, 202, 214, 0.55);
-            font-size: 0.85rem;
-            letter-spacing: 0.04em;
+        @media (max-width: 800px) {
+            .row, .row.reverse { flex-direction: column; gap: 20px; text-align: center; }
+            .masal-grid { grid-template-columns: repeat(3, 1fr); }
         }
-
-
-        /* =========================================================
-           DEKORATİF AYIRICI
-        ========================================================= */
-
-        .section-divider {
-            width: min(1100px, 85%);
-            height: 1px;
-            margin: 0 auto;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                var(--cizgi),
-                transparent
-            );
-        }
-
-
-        /* =========================================================
-           TABLET
-        ========================================================= */
-
-        @media (max-width: 1000px) {
-
-            .about,
-            .books,
-            .education,
-            .apps,
-            .fairy-tales {
-                padding: 100px 0;
-            }
-
-            .about-grid,
-            .books-grid,
-            .education-grid {
-                gap: 55px;
-            }
-
-            .apps-list {
-                gap: 35px;
-            }
-
-            .app-card {
-                grid-template-columns: 130px 1fr;
-                gap: 25px;
-                padding: 25px;
-            }
-
-            .app-image img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .fairy-books {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 30px;
-            }
-        }
-
-
-        /* =========================================================
-           MOBİL
-        ========================================================= */
-
-        @media (max-width: 700px) {
-
-            body {
-                line-height: 1.7;
-            }
-
-            .container {
-                width: 88%;
-            }
-
-            .hero img {
-                width: 100%;
-                height: auto;
-            }
-
-            .about,
-            .books,
-            .education,
-            .apps,
-            .fairy-tales {
-                padding: 75px 0;
-            }
-
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 20px;
-            }
-
-            .section-text {
-                font-size: 1rem;
-                line-height: 1.8;
-            }
-
-            /* HAKKIMDA */
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .about-image {
-                justify-content: center;
-            }
-
-            .about-image img {
-                width: min(80%, 330px);
-            }
-
-            .about-content {
-                padding-right: 0;
-                text-align: left;
-            }
-
-            /* KİTAPLAR */
-            .books-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .books-content {
-                order: 1;
-            }
-
-            .book-image {
-                order: 2;
-                justify-content: center;
-            }
-
-            .book-image img {
-                width: min(75%, 320px);
-                margin: 0 auto;
-            }
-
-            /* EĞİTİMLER */
-            .education-grid {
-                grid-template-columns: 1fr;
-                gap: 45px;
-            }
-
-            .education-images {
-                order: 1;
-                gap: 15px;
-            }
-
-            .education-images img {
-                width: min(42%, 180px);
-            }
-
-            .education-content {
-                order: 2;
-                padding-left: 0;
-            }
-
-            /* UYGULAMALAR */
-            .apps-header {
-                margin-bottom: 45px;
-            }
-
-            .apps-list {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .app-card {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 20px;
-                padding: 30px 20px;
-            }
-
-            .app-image img {
-                width: 135px;
-                height: 135px;
-            }
-
-            .app-title {
-                font-size: 1.4rem;
-            }
-
-            /* MASALLAR */
-            .fairy-header {
-                margin-bottom: 40px;
-            }
-
-            .fairy-books {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 22px;
-            }
-
-            /* İLETİŞİM */
-            .contact {
-                padding: 75px 0 45px;
-            }
-        }
-
-
-        /* =========================================================
-           KÜÇÜK TELEFONLAR
-        ========================================================= */
-
-        @media (max-width: 420px) {
-
-            .container {
-                width: 90%;
-            }
-
-            .about,
-            .books,
-            .education,
-            .apps,
-            .fairy-tales {
-                padding: 60px 0;
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .fairy-books {
-                gap: 15px;
-            }
-
-            .education-images img {
-                width: 44%;
-            }
-        }
-
-
-        /* =========================================================
-           HAREKET AZALTMA TERCİHİ
-        ========================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-            }
+        @media (max-width: 500px) {
+            .masal-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- =========================================================
-         1 - HERO BANNER
-    ========================================================= -->
+    <div class="hero-banner">
+        <img src="banner.jpg" alt="Yağmur Yılmaz Banner">
+    </div>
 
-    <section class="hero">
-        <img src="banner.jpg" alt="Yağmur Yılmaz Kayacı - Kişisel Portföy">
-    </section>
-
-
-    <!-- =========================================================
-         2 - HAKKIMDA
-    ========================================================= -->
-
-    <section class="about">
-        <div class="container">
-
-            <div class="about-grid">
-
-                <div class="about-image">
-                    <img src="yagmur.png" alt="Yağmur Yılmaz Kayacı">
+    <div class="container">
+        <!-- HAKKIMDA -->
+        <section id="hakkimda">
+            <div class="row">
+                <div class="col-img">
+                    <img src="yagmur.png" alt="Yağmur Yılmaz">
                 </div>
-
-                <div class="about-content">
-
-                    <h2 class="section-title">HAKKIMDA</h2>
-
-                    <div class="gold-line"></div>
-
-                    <p class="section-text">
-                        Merhaba, ben Yağmur Yılmaz Kayacı. Bilginin ve toplumsal bilincin paylaşıldıkça çoğaldığına inanan; Türk kültürü, tarihi ve dili üzerine araştırmalar yapan bağımsız bir araştırmacı, yazar ve eğitmenim. RTV Programcılığı, Kamu Yönetimi lisans eğitimi ile İş Sağlığı ve Güvenliği alanındaki mezuniyetlerimi, yıllardır Türk İşaret Dili (TİD) dalında yürüttüğüm akademik ve pratik çalışmalarla birleştiriyorum. Aynı zamanda eğitimli bir afet gönüllüsü olarak toplumsal sorumluluk projelerinde aktif rol alıyor; dezavantajlı grupların hayatında farkındalık yaratmayı ve iletişimin engellerini aşmayı amaçlıyorum. Geliştirdiğim dijital projeler, kaleme aldığım eserler ve yürüttüğüm eğitimlerle kültürel mirasımızı ve toplumsal dayanışmayı geleceğe taşımaya devam ediyorum.
-                    </p>
-
+                <div class="col-text">
+                    <h2>Hakkımda</h2>
+                    <p>Merhaba, ben Yağmur Yılmaz Kayacı. Bilginin ve toplumsal bilincin paylaşıldıkça çoğaldığına inanan; Türk kültürü, tarihi ve dili üzerine araştırmalar yapan bağımsız bir araştırmacı, yazar ve eğitmenim.</p>
+                    <p>RTV Programcılığı, Kamu Yönetimi lisans eğitimi ile İş Sağlığı ve Güvenliği alanındaki mezuniyetlerimi, yıllardır Türk İşaret Dili (TİD) dalında yürüttüğüm akademik ve pratik çalışmalarla birleştiriyorum. Aynı zamanda eğitimli bir afet gönüllüsü olarak toplumsal sorumluluk projelerinde aktif rol alıyor; dezavantajlı grupların hayatında farkındalık yaratmayı ve iletişimin engellerini aşmayı amaçlıyorum.</p>
+                    <p>Geliştirdiğim dijital projeler, kaleme aldığım eserler ve yürüttüğüm eğitimlerle kültürel mirasımızı ve toplumsal dayanışmayı geleceğe taşımaya devam ediyorum.</p>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
-
-
-    <div class="section-divider"></div>
-
-
-    <!-- =========================================================
-         3 - KİTAPLARIM
-    ========================================================= -->
-
-    <section class="books">
-        <div class="container">
-
-            <div class="books-grid">
-
-                <div class="books-content">
-
-                    <h2 class="section-title">KİTAPLARIM</h2>
-
-                    <div class="gold-line"></div>
-
-                    <p class="section-text">
-                        Dil, konuşulmadan önce vardı. Bu kitap, o sessiz çağın izini sürüyor. Dil gerçekten sesle mi başladı, yoksa insanlık kelimelerden önce işaretlerle mi anlaştı? İlk dil işaret dili miydi? Türk İşaret Dili’ni merkezine alan bu çalışma, dili yalnızca bir iletişim aracı olarak değil; nesiller boyunca aktarılan bir hafıza, bir kimlik ve bir kültür alanı olarak ele alıyor. Okuyucusunu, dil üzerine yeniden düşünmeye; kendi diline ve kültürüne sahip çıkmaya davet ediyor. 'Her Türk’ün Bilmesi Gerekenler' başlıklı çok ciltli serinin ilk kitabı olan Türklerin İşaret Tarihi, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor. Belki de insanlığın ilk dili, sandığımızdan çok daha sessizdi...
-                    </p>
-
+        <!-- KİTAPLARIM -->
+        <section id="kitaplarim">
+            <div class="row reverse">
+                <div class="col-img">
+                    <img src="kapak.jpg" alt="Kitap Kapağı" style="max-height: 280px;">
                 </div>
-
-                <div class="book-image">
-                    <img src="kapak.jpg" alt="Türklerin İşaret Tarihi - Yağmur Yılmaz Kayacı">
+                <div class="col-text">
+                    <h2>Kitaplarım</h2>
+                    <p>Dil, konuşulmadan önce vardı. Bu kitap, o sessiz çağın izini sürüyor. Dil gerçekten sesle mi başladı, yoksa insanlık kelimelerden önce işaretlerle mi anlaştı? İlk dil işaret dili miydi?</p>
+                    <p>Türk İşaret Dili’ni merkezine alan bu çalışma, dili yalnızca bir iletişim aracı olarak değil; nesiller boyunca aktarılan bir hafıza, bir kimlik ve bir kültür alanı olarak ele alıyor. Okuyucusunu, dil üzerine yeniden düşünmeye; kendi diline ve kültürüne sahip çıkmaya davet ediyor.</p>
+                    <p>'Her Türk’ün Bilmesi Gerekenler' başlıklı çok ciltli serinin ilk kitabı olan Türklerin İşaret Tarihi, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor.</p>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
-
-
-    <div class="section-divider"></div>
-
-
-    <!-- =========================================================
-         4 - EĞİTİMLERİM
-    ========================================================= -->
-
-    <section class="education">
-        <div class="container">
-
-            <div class="education-grid">
-
-                <div class="education-images">
-
-                    <img src="udemy_1.png" alt="Türk İşaret Dili Temel Seviye Eğitimi">
-
-                    <img src="udemy_2.png" alt="Türk İşaret Dili İleri Seviye Eğitimi">
-
+        <!-- EĞİTİMLERİM -->
+        <section id="egitimlerim">
+            <div class="row">
+                <div class="col-img">
+                    <div class="udemy-box">
+                        <img src="udemy_1.png" alt="Eğitim 1">
+                        <img src="udemy_2.png" alt="Eğitim 2" onerror="this.style.display='none'">
+                    </div>
                 </div>
-
-                <div class="education-content">
-
-                    <h2 class="section-title">EĞİTİMLERİM</h2>
-
-                    <div class="gold-line"></div>
-
-                    <p class="section-text">
-                        MEB onaylı TİD Tercümanı ve Eğitmeni kimliğimle profesyonel eğitim serileri veriyorum. Temel seviyenin 120 saate, ileri seviyenin 200 saate denk geldiği; ayrıntılı ve profesyonel bir şekilde çekilmiş Türk İşaret Dili eğitimlerim bu alanda yetkinlik kazanmak isteyenler için Udemy platformunda yayındadır.
-                    </p>
-
+                <div class="col-text">
+                    <h2>Eğitimlerim</h2>
+                    <p>MEB onaylı TİD Tercümanı ve Eğitmeni kimliğimle profesyonel eğitim serileri veriyorum.</p>
+                    <p>Temel seviyenin 120 saate, ileri seviyenin 200 saate denk geldiği; ayrıntılı ve profesyonel bir şekilde çekilmiş Türk İşaret Dili eğitimlerim bu alanda yetkinlik kazanmak isteyenler için Udemy platformunda yayındadır.</p>
                 </div>
-
             </div>
+        </section>
 
-        </div>
-    </section>
-
-
-    <div class="section-divider"></div>
-
-
-    <!-- =========================================================
-         5 - UYGULAMALARIM
-    ========================================================= -->
-
-    <section class="apps">
-        <div class="container">
-
-            <div class="apps-header">
-
-                <h2 class="section-title">UYGULAMALARIM</h2>
-
-                <div class="gold-line"></div>
-
-            </div>
-
-
-            <div class="apps-list">
-
-                <!-- TİD SÖZLÜK -->
-
-                <article class="app-card">
-
-                    <div class="app-image">
+        <!-- UYGULAMALARIM -->
+        <section id="uygulamalarim">
+            <div class="row reverse">
+                <div class="col-img">
+                    <div class="apps-box">
                         <img src="logo.png" alt="TİD Sözlük">
+                        <img src="cepkasa.jpg" alt="Cep Kasa">
                     </div>
-
-                    <div class="app-content">
-
-                        <h3 class="app-title">TİD Sözlük</h3>
-
-                        <p class="app-text">
-                            Ücretsiz yayınladığım bu mobil sözlük uygulaması ile kullanıcılar işaret dili kelimelerine doğrudan erişebilir ve hemen kelime öğrenebilirler.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <!-- CEP KASA -->
-
-                <article class="app-card">
-
-                    <div class="app-image">
-                        <img src="cepkasa.jpg" alt="Cep Kasa: Altın & Varlık Takip">
-                    </div>
-
-                    <div class="app-content">
-
-                        <h3 class="app-title">Cep Kasa: Altın &amp; Varlık Takip</h3>
-
-                        <p class="app-text">
-                            Güvenli bir varlık ve altın listesi saklama aracıdır.
-                        </p>
-
-                    </div>
-
-                </article>
-
+                </div>
+                <div class="col-text">
+                    <h2>Uygulamalarım</h2>
+                    <p><strong>TİD Sözlük:</strong> Ücretsiz yayınladığım bu mobil sözlük uygulaması ile kullanıcılar işaret dili kelimelerine doğrudan erişebilir ve hemen kelime öğrenebilirler.</p>
+                    <p><strong>Cep Kasa: Altın & Varlık Takip:</strong> Güvenli bir varlık ve altın listesi saklama aracıdır.</p>
+                </div>
             </div>
+        </section>
 
-        </div>
-    </section>
-
-
-    <div class="section-divider"></div>
-
-
-    <!-- =========================================================
-         6 - MASAL KİTAPLARIM
-    ========================================================= -->
-
-    <section class="fairy-tales">
-        <div class="container">
-
-            <div class="fairy-header">
-
-                <h2 class="section-title">MASAL KİTAPLARIM</h2>
-
-                <div class="gold-line"></div>
-
-                <p class="section-text">
-                    Engellilik ve sosyal farkındalık temalı, akran zorbalığını da işleyen, 'Farkındayım Serisi' isminde Google Play Store üzerinden edinilebilen 6 adet çocuk masal kitabım bulunmaktadır.
-                </p>
-
+        <!-- MASAL KİTAPLARIM -->
+        <section id="masal-kitaplarim">
+            <h2>Masal Kitaplarım</h2>
+            <p>Engellilik ve sosyal farkındalık temalı, akran zorbalığını da işleyen, 'Farkındayım Serisi' isminde Google Play Store üzerinden edinilebilen 6 adet çocuk masal kitabım bulunmaktadır.</p>
+            <div class="masal-grid">
+                <div class="masal-item"><img src="masal_1.png" alt="Masal 1"></div>
+                <div class="masal-item"><img src="masal_2.png" alt="Masal 2"></div>
+                <div class="masal-item"><img src="masal_3.png" alt="Masal 3"></div>
+                <div class="masal-item"><img src="masal_4.png" alt="Masal 4"></div>
+                <div class="masal-item"><img src="masal_5.png" alt="Masal 5"></div>
+                <div class="masal-item"><img src="masal_6.png" alt="Masal 6"></div>
             </div>
+        </section>
 
-
-            <div class="fairy-books">
-
-                <img src="masal_1.png" alt="Farkındayım Serisi - Masal Kitabı 1">
-
-                <img src="masal_2.png" alt="Farkındayım Serisi - Masal Kitabı 2">
-
-                <img src="masal_3.png" alt="Farkındayım Serisi - Masal Kitabı 3">
-
-                <img src="masal_4.png" alt="Farkındayım Serisi - Masal Kitabı 4">
-
-                <img src="masal_5.png" alt="Farkındayım Serisi - Masal Kitabı 5">
-
-                <img src="masal_6.png" alt="Farkındayım Serisi - Masal Kitabı 6">
-
+        <!-- İLETİŞİM -->
+        <section class="social-section">
+            <h2>İletişim</h2>
+            <p>Sosyal medya hesaplarımız üzerinden bağlantı kurabilirsiniz.</p>
+            <div>
+                <img src="sosyal.png" alt="Sosyal Medya QR">
             </div>
-
-        </div>
-    </section>
-
-
-    <div class="section-divider"></div>
-
-
-    <!-- =========================================================
-         7 - İLETİŞİM
-    ========================================================= -->
-
-    <section class="contact">
-
-        <div class="container">
-
-            <div class="contact-image">
-                <img src="sosyal.png" alt="Yağmur Yılmaz Kayacı - Sosyal Medya ve İletişim">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         ALT BİLGİ
-    ========================================================= -->
-
-    <footer class="footer">
-        © Yağmur Yılmaz Kayacı
-    </footer>
+        </section>
+    </div>
 
 </body>
 </html>
