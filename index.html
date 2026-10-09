@@ -9,8 +9,10 @@
             --bg-color: #0b1329;
             --gold-color: #d4af37;
             --text-color: #e2e8f0;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --border-color: rgba(212, 175, 55, 0.25);
+            --border-color: rgba(212, 175, 55, 0.3);
+        }
+        html {
+            scroll-behavior: smooth;
         }
         * {
             margin: 0;
@@ -21,7 +23,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             overflow-x: hidden;
         }
         .hero-banner {
@@ -31,105 +33,102 @@
         }
         .hero-banner img {
             width: 100%;
-            max-height: 500px;
+            max-height: 420px;
             object-fit: cover;
             display: block;
             margin: 0 auto;
-            border-bottom: 3px solid var(--gold-color);
+            border-bottom: 2px solid var(--gold-color);
         }
         .container {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: 40px 20px;
         }
         section {
-            padding: 60px 0;
-            border-bottom: 1px solid var(--border-color);
+            padding: 50px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
         }
         h2 {
             color: var(--gold-color);
-            font-size: 2rem;
+            font-size: 1.8rem;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
         }
         p {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: var(--text-color);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .row {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
         }
         .row.reverse {
             flex-direction: row-reverse;
         }
         .col-text {
-            flex: 1;
+            flex: 1.2;
         }
         .col-img {
-            flex: 1;
+            flex: 0.8;
             text-align: center;
         }
+        /* Küçük ve şık görsel boyutlandırmaları */
         .col-img img {
             max-width: 100%;
-            max-height: 380px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            max-height: 240px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
             background: rgba(0,0,0,0.2);
             object-fit: contain;
         }
-        .udemy-box {
+        .udemy-box, .apps-box {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             justify-content: center;
         }
-        .udemy-box img {
+        .udemy-box img, .apps-box img {
+            max-height: 150px;
             max-width: 48%;
-            max-height: 250px;
-        }
-        .apps-box {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
+            border-radius: 8px;
         }
         .apps-box img {
-            max-width: 160px;
-            max-height: 160px;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
+            max-height: 120px;
+            max-width: 120px;
         }
         .masal-grid {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
-            gap: 15px;
-            margin-top: 30px;
+            gap: 10px;
+            margin-top: 25px;
         }
         .masal-item img {
             width: 100%;
-            border-radius: 8px;
+            max-height: 180px;
+            object-fit: cover;
+            border-radius: 6px;
             border: 1px solid var(--border-color);
             transition: transform 0.3s ease;
         }
         .masal-item img:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
         }
         .social-section {
             text-align: center;
-            padding: 60px 0;
+            padding: 50px 0;
         }
         .social-section img {
-            max-width: 220px;
+            max-width: 160px;
             width: 100%;
-            border-radius: 12px;
-            border: 2px solid var(--border-color);
-            margin-top: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 15px;
         }
-        @media (max-width: 850px) {
-            .row, .row.reverse { flex-direction: column; gap: 30px; }
+        @media (max-width: 800px) {
+            .row, .row.reverse { flex-direction: column; gap: 20px; text-align: center; }
             .masal-grid { grid-template-columns: repeat(3, 1fr); }
         }
         @media (max-width: 500px) {
@@ -163,13 +162,13 @@
         <section id="kitaplarim">
             <div class="row reverse">
                 <div class="col-img">
-                    <img src="kapak.jpg" alt="Kitap Kapağı">
+                    <img src="kapak.jpg" alt="Kitap Kapağı" style="max-height: 280px;">
                 </div>
                 <div class="col-text">
                     <h2>Kitaplarım</h2>
                     <p>Dil, konuşulmadan önce vardı. Bu kitap, o sessiz çağın izini sürüyor. Dil gerçekten sesle mi başladı, yoksa insanlık kelimelerden önce işaretlerle mi anlaştı? İlk dil işaret dili miydi?</p>
                     <p>Türk İşaret Dili’ni merkezine alan bu çalışma, dili yalnızca bir iletişim aracı olarak değil; nesiller boyunca aktarılan bir hafıza, bir kimlik ve bir kültür alanı olarak ele alıyor. Okuyucusunu, dil üzerine yeniden düşünmeye; kendi diline ve kültürüne sahip çıkmaya davet ediyor.</p>
-                    <p>'Her Türk’ün Bilmesi Gerekenler' başlıklı çok ciltli serinin ilk kitabı olan Türklerin İşaret Tarihi, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor. Belki de insanlığın ilk dili, sandığımızdan çok daha sessizdi...</p>
+                    <p>'Her Türk’ün Bilmesi Gerekenler' başlıklı çok ciltli serinin ilk kitabı olan Türklerin İşaret Tarihi, Türk tamgalarından günümüz işaret kültürüne uzanan kadim iletişim mirasını, Türk kültür tarihi ekseninde ele alıyor ve bu alanda farklı bir bakış açısı sunuyor.</p>
                 </div>
             </div>
         </section>
